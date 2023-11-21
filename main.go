@@ -1,7 +1,7 @@
 package main
 
 import (
-	"encoding/gob"
+	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
@@ -24,7 +24,7 @@ func mdfunc(w http.ResponseWriter, r *http.Request) {
 		Button: fmt.Sprintf("%v", btns),
 		Text:   htmlText,
 	}
-	if err := gob.NewEncoder(w).Encode(formatedtrext); err != nil {
+	if err := json.NewEncoder(w).Encode(formatedtrext); err != nil {
 		log.Print(err.Error())
 	}
 }
