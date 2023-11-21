@@ -1,4 +1,4 @@
-package tg_md2html
+package main
 
 import (
 	"html"
@@ -27,13 +27,13 @@ func (cv ConverterV2) stripHTML(in []rune) string {
 	for i := 0; i < len(in); i++ {
 		switch in[i] {
 		case '<':
-			close := getHTMLTagCloseIndex(in[i+1:])
-			if close < 0 {
+			clos := getHTMLTagCloseIndex(in[i+1:])
+			if clos < 0 {
 				// gone weird; just skip.
 				continue
 			}
 
-			i += close + 1 // skip to closing tag.
+			i += clos + 1 // skip to closing tag.
 			continue
 
 		default:

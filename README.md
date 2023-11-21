@@ -1,4 +1,4 @@
-# gotg_md2html
+# API for using gotg_md2html
 
 Having played with telegram bots for a while, I've always hated how inconsistent the markdown support was.
 It has never seemed stable, consistent, or supported.

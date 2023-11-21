@@ -1,4 +1,4 @@
-package tg_md2html
+package main
 
 import (
 	"regexp"
@@ -47,8 +47,10 @@ func contains(r rune, rr []rune) bool {
 	return false
 }
 
-var link = regexp.MustCompile(`a href="(.*)"`)
-var customEmoji = regexp.MustCompile(`tg-emoji emoji-id="(.*)"`)
+var (
+	link        = regexp.MustCompile(`a href="(.*)"`)
+	customEmoji = regexp.MustCompile(`tg-emoji emoji-id="(.*)"`)
+)
 
 func IsEscaped(input []rune, pos int) bool {
 	if pos == 0 {

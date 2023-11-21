@@ -1,4 +1,4 @@
-package tg_md2html
+package main
 
 import (
 	"errors"
@@ -8,9 +8,10 @@ import (
 	"strings"
 )
 
-var ErrNoButtonContent = errors.New("no button contents")
-
-var languageCodeblock = regexp.MustCompile(`^(?s)<code class="language-(.*?)">(.*)</code>$`)
+var (
+	ErrNoButtonContent = errors.New("no button contents")
+	languageCodeblock  = regexp.MustCompile(`^(?s)<code class="language-(.*?)">(.*)</code>$`)
+)
 
 func ReverseV2(in string, bs []ButtonV2) (string, error) {
 	return defaultConverterV2.Reverse(in, bs)

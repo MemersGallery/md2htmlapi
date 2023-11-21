@@ -20,7 +20,7 @@ type Frameit struct {
 func mdfunc(w http.ResponseWriter, r *http.Request) {
 	htmlText, btns := MD2HTMLButtonsV2(r.FormValue("rtext"))
 	formatedtrext := Frameit{
-		Type:   "success!",
+		Type:   "ok",
 		Button: fmt.Sprintf("%v", btns),
 		Text:   htmlText,
 	}
@@ -30,7 +30,7 @@ func mdfunc(w http.ResponseWriter, r *http.Request) {
 }
 
 func homePage(w http.ResponseWriter, _ *http.Request) {
-	if _, err := fmt.Fprint(w, "Welcome!"); err != nil {
+	if _, err := fmt.Fprint(w, "Ok!"); err != nil {
 		log.Println(err.Error())
 	}
 }

@@ -1,20 +1,23 @@
-package tg_md2html
+package main
 
 import (
 	"html"
 	"strings"
 )
 
-var tagHTML = map[rune]string{
-	'_': "i",
-	'*': "b",
-	'`': "code",
-}
+var (
+	tagHTML = map[rune]string{
+		'_': "i",
+		'*': "b",
+		'`': "code",
+	}
+	allMdChars = []rune{'_', '*', '`', '[', ']', '(', ')', '\\'}
+)
 
-var allMdChars = []rune{'_', '*', '`', '[', ']', '(', ')', '\\'}
-
-const btnURLPrefix = "buttonurl:"
-const sameLineSuffix = ":same"
+const (
+	btnURLPrefix   = "buttonurl:"
+	sameLineSuffix = ":same"
+)
 
 var defaultConverter = Converter{
 	BtnPrefix:      btnURLPrefix,
